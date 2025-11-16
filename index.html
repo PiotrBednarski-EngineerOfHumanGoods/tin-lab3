@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJATK - Responsywna Strona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Nawigacja */
+        header {
+            background-color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #e31e24;
+            font-size: 24px;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.7;
+        }
+
+        nav ul li:not(:last-child)::after {
+            content: "|";
+            color: #e31e24;
+            margin-left: 40px;
+        }
+
+        /* Główna sekcja */
+        .content-section {
+            background-color: #f5f5f5;
+            padding: 60px 40px;
+        }
+
+        .items-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .item h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .item p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* Galeria zdjęć */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Stopka */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 18px;
+        }
+
+        /* Media Queries - Responsywność */
+        @media screen and (max-width: 1024px) {
+            .items-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            nav ul {
+                gap: 25px;
+            }
+
+            nav ul li:not(:last-child)::after {
+                margin-left: 25px;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            nav ul li:not(:last-child)::after {
+                content: "";
+                margin-left: 0;
+            }
+
+            nav ul li a {
+                font-size: 22px;
+                display: block;
+            }
+
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .items-container {
+                gap: 40px;
+            }
+
+            .item h2 {
+                font-size: 28px;
+            }
+
+            .item p {
+                font-size: 15px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            footer {
+                font-size: 16px;
+                padding: 25px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            nav ul li a {
+                font-size: 20px;
+            }
+
+            .content-section {
+                padding: 30px 15px;
+            }
+
+            .item h2 {
+                font-size: 24px;
+            }
+
+            .item p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nawigacja -->
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="#000" stroke-width="1"/>
+                <circle cx="50" cy="50" r="35" fill="#e31e24"/>
+                <text x="50" y="25" font-size="8" text-anchor="middle" fill="#000">PJATK</text>
+                <text x="50" y="85" font-size="6" text-anchor="middle" fill="#000">波蘭日本</text>
+                <text x="50" y="92" font-size="6" text-anchor="middle" fill="#000">資訊技術學院</text>
+            </svg>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#offer">Offer</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Główna treść -->
+    <section class="content-section">
+        <div class="items-container">
+            <!-- Item 1 -->
+            <div class="item">
+                <h2>Item 1</h2>
+                <p>In modern world not only computers can display websites. Many different devices have screens of many different dimensions. The challenge is to design a website, which is readable on every device currently available. We call it RWD - responsive web design</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item">
+                <h2>Item 2</h2>
+                <div class="image-grid">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Sala wykładowa 1">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Sala wykładowa 2">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Sala wykładowa 3">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=300&fit=crop" alt="Sala wykładowa 4">
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item">
+                <h2>Item 3</h2>
+                <p>In modern world not only computers can display websites. Many different devices have screens of many different dimensions. The challenge is to design a website, which is readable on every device currently available. We call it RWD - responsive web design</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        &copy; PJATK
+    </footer>
+</body>
+</html>
